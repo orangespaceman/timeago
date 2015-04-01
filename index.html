@@ -3,28 +3,11 @@
 <head>
     <meta charset="utf-8"/>
     <title>timeAgo - relative time with JavaScript</title>
+    <style>body { background: #fff; }</style>
 </head>
 <body>
     <h1>timeago - relative time with JavaScript</h1>
-    <p>Turn absolute dates into relative dates.</p>
-    <p>Uses a single 'global' setTimeout call once a second, rather than a separate setInterval for every element</p>
 
-    <h2>Init</h2>
-    <p>To start, call <code>timeAgo.init();</code></p>
-
-    <h2>Adding Dates</h2>
-    <p>To add a relative date, call <code>timeAgo.add($el);</code> where <code>$el</code> is a jQuery object containing the element</p>
-
-    <h2>HTML</h2>
-    <p>Can be used with HTML element, but it must have a data attribute of <strong>datetime</strong> which is correctly ISO8601 formatted, e.g. <code>2013-04-27 22:58:43</code> - this can be generated easily with JavaScript or a server-side language</p>
-
-    <h2>Requirements</h2>
-    <p>Just import jQuery, and then the timeAgo script</p>
-
-    <h2>Credits</h2>
-    <p>Inspired by <a href="http://pragmaticly.github.io/smart-time-ago/">Smart Time Ago</a> and <a href="http://timeago.yarp.com/">timeago</a></p>
-
-    <h2>Example</h2>
     <p>Click <a id="add" href="#">here</a> button to add new elements</p>
     <p>View source to see how it's done</p>
     <ul>
@@ -42,8 +25,10 @@
         $("#add").on("click", add);
         function add(e) {
             e.preventDefault();
+            var date = new Date().toISOString();
             var $li = $("<li>")
-                .data('datetime', new Date().toISOString())
+                .data('datetime', date)
+                .text(date)
                 .appendTo($ul);
             timeAgo.add($li);
         }
