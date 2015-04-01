@@ -28,8 +28,3 @@ Just import jQuery, and then the timeAgo script
 Credits
 ---
 Inspired by [Smart Time Ago](http://pragmaticly.github.io/smart-time-ago/) and [timeago](http://timeago.yarp.com)
-
-
-Example
----
-Look at the index page in the repo, or [here](http://labs.petegoodman.com/timeago/)
